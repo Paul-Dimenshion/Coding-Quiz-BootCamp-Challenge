@@ -33,6 +33,7 @@ const startBtn = document.querySelector('#start-quiz');
 const checkBtn = document.querySelector('#check-answer');
 const playAgainBtn = document.querySelector('#play-again');
 
+
 // variables of quiz
 let score = 0; // quantatie of correct answers
 let questionIndex = 0; // current question
@@ -59,4 +60,19 @@ function showQuestion(){
     for (item of questions[questionIndex]['answers']){
         console.log(item);
     }
+}
+
+function startQuiz(){
+    headerContainer.innerHTML = ""
+    renderQuestion()
+}
+
+
+
+startBtn.addEventListener("click", startQuiz)
+
+function renderQuestion(){
+    const para = document.createElement("p");
+    para.innerText = "This is a paragraph";
+    headerContainer.appendChild(para);
 }
